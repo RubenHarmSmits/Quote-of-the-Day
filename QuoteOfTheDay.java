@@ -11,7 +11,7 @@ public class QuoteOfTheDay {
     ArrayList<Quote> quotes;
     LocalDate today = LocalDate.now();
 
-    void printQuote() throws IOException {
+    private void printQuote() throws IOException {
         quotes = makeQuotes();
         System.out.println(makeIntro());
         quotes.get(checkIndex()).print();
@@ -46,9 +46,8 @@ public class QuoteOfTheDay {
         return quotes;
     }
 
-    public String makeOrdinal(int value) {
-        int mod = value % 10;
-        switch (mod) {
+    private String makeOrdinal(int number) {
+        switch (number % 10) {
             case 1:
                 return "st";
             case 2:
